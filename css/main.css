@@ -256,7 +256,6 @@
 .dow:nth-child(6),
 :nth-child(7) {
   color: #ff4423;
-  font-weight: 700;
   font-size: 12px;
 }
 .datepicker-header .datepicker-controls {
@@ -287,6 +286,7 @@
 .datepicker-cell.today:not(.selected) {
   background-color: #e0e9f4;
 }
+
 .datepicker-cell.selected {
   background-color: transparent;
   color: #131825;
