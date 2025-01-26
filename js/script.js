@@ -34,6 +34,36 @@ Datepicker.locales.ru = {
   weekStart: 1, // Start the week on Monday
 };
 
+// const inputs = document.querySelectorAll(".period__input");
+
+// inputs.forEach(input => {
+//   const datepickerInstance = new Datepicker(input, {
+//     autohide: true,
+//     format: "dd.mm.yyyy",
+//     language: "ru",
+//     todayHighlight: true,
+//     minDate: new Date(),
+//     monthsShown: 2,
+//   });
+
+//   const icon = input.parentElement.querySelector(".period__input-icon");
+
+//   if (icon) {
+//     const toggleIconVisibility = () => {
+//       icon.style.visibility = input.value.trim() !== "" ? "visible" : "hidden";
+//     };
+
+//     input.addEventListener("input", toggleIconVisibility);
+
+//     icon.addEventListener("click", () => {
+//       input.value = "";
+//       icon.style.visibility = "hidden";
+//     });
+
+//     toggleIconVisibility();
+//   }
+// });
+
 const inputs = document.querySelectorAll(".period__input");
 
 inputs.forEach(input => {
@@ -43,7 +73,7 @@ inputs.forEach(input => {
     language: "ru",
     todayHighlight: true,
     minDate: new Date(),
-    monthsShown: 2,
+    monthsShown: 2, // Ensure two months are shown
   });
 
   const icon = input.parentElement.querySelector(".period__input-icon");
@@ -51,10 +81,25 @@ inputs.forEach(input => {
   if (icon) {
     const toggleIconVisibility = () => {
       icon.style.visibility = input.value.trim() !== "" ? "visible" : "hidden";
+      console.log(input.value);
     };
+
+    input.addEventListener("focus", () => {
+      toggleIconVisibility();
+    });
+    input.addEventListener("active", () => {
+      toggleIconVisibility();
+    });
+
+    input.addEventListener("blur", () => {
+      toggleIconVisibility();
+    });
 
     input.addEventListener("input", toggleIconVisibility);
 
+    input.addEventListener("changeDate", () => {
+      toggleIconVisibility();
+    });
     icon.addEventListener("click", () => {
       input.value = "";
       icon.style.visibility = "hidden";
@@ -78,3 +123,23 @@ sliderImages.forEach(img => {
     img.classList.add("detail-slider__item-img--active");
   });
 });
+
+const prevBtn = document.querySelector(".prev-btn");
+prevBtn.innerHTML = "";
+const leftArrow = document.createElement("img");
+leftArrow.src = "../img/icons/chevron-left.png";
+prevBtn.appendChild(leftArrow);
+
+const nextBtn = document.querySelector(".next-btn");
+nextBtn.innerHTML = "";
+const rightArrow = document.createElement("img");
+rightArrow.src = "../img/icons/chevron-right.png";
+nextBtn.appendChild(rightArrow);
+
+theDayBefore = document.querySelector(".today").previousSibling;
+theDayBefore.style.backgroundColor = "#3563E9";
+theDayBefore.style.color = "#FFFFFF";
+
+theDayAfter = document.querySelector(".today").nextElementSibling;
+theDayAfter.style.backgroundColor = "#3563E9";
+theDayAfter.style.color = "#FFFFFF";
