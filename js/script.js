@@ -124,22 +124,38 @@ sliderImages.forEach(img => {
   });
 });
 
-const prevBtn = document.querySelector(".prev-btn");
-prevBtn.innerHTML = "";
-const leftArrow = document.createElement("img");
-leftArrow.src = "../img/icons/chevron-left.png";
-prevBtn.appendChild(leftArrow);
+// Update prev-btn with left arrow
+const prevBtns = document.querySelectorAll(".prev-btn");
+prevBtns.forEach(prevBtn => {
+  prevBtn.innerHTML = ""; // Clear existing content
+  const leftArrow = document.createElement("img");
+  leftArrow.src = "../img/icons/chevron-left.png";
+  prevBtn.appendChild(leftArrow);
+});
 
-const nextBtn = document.querySelector(".next-btn");
-nextBtn.innerHTML = "";
-const rightArrow = document.createElement("img");
-rightArrow.src = "../img/icons/chevron-right.png";
-nextBtn.appendChild(rightArrow);
+const nextBtns = document.querySelectorAll(".next-btn");
+nextBtns.forEach(nextBtn => {
+  nextBtn.innerHTML = "";
+  const rightArrow = document.createElement("img");
+  rightArrow.src = "../img/icons/chevron-right.png";
+  nextBtn.appendChild(rightArrow);
+});
 
-theDayBefore = document.querySelector(".today").previousSibling;
-theDayBefore.style.backgroundColor = "#3563E9";
-theDayBefore.style.color = "#FFFFFF";
+const todayElements = document.querySelectorAll(".today");
+todayElements.forEach(today => {
+  const theDayBefore = today.previousElementSibling;
+  if (theDayBefore) {
+    theDayBefore.style.backgroundColor = "#3563E9";
+    theDayBefore.style.color = "#FFFFFF";
+    theDayBefore.style.borderRadius = "0";
+    theDayBefore.style.fontSize = "12px";
+  }
 
-theDayAfter = document.querySelector(".today").nextElementSibling;
-theDayAfter.style.backgroundColor = "#3563E9";
-theDayAfter.style.color = "#FFFFFF";
+  const theDayAfter = today.nextElementSibling;
+  if (theDayAfter) {
+    theDayAfter.style.backgroundColor = "#3563E9";
+    theDayAfter.style.color = "#FFFFFF";
+    theDayAfter.style.borderRadius = "0";
+    theDayAfter.style.fontSize = "12px";
+  }
+});
