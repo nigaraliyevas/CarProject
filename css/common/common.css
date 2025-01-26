@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+.container {
+  max-width: 1262px;
+  padding: 32px 112px;
+}
+
+.d-flex {
+  display: flex;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-space-between {
+  justify-content: space-between;
+}
+.d-block {
+  display: block;
+}
+.relative {
+  position: relative;
+}
+.d-inline-block {
+  display: inline-block;
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 10px 23px;
+  }
+}

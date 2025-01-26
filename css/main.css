@@ -1,0 +1,249 @@
+.sm-layout {
+  display: none;
+}
+.detail {
+  display: flex;
+  column-gap: 24px;
+}
+.detail-slider__item-container {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+}
+.detail-slider__item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.detail-slider__item-img--active {
+  border: 1px solid #3563e9;
+}
+.tns-controls {
+  display: none;
+}
+.tns-nav {
+  display: none;
+}
+.tns-outer {
+  min-width: 10%;
+}
+.detail-info {
+  border-radius: 24px;
+  background-color: #f8f8f8;
+  display: flex;
+}
+.detail-info__img-container {
+  width: 520px;
+  height: 560px;
+  border-right: 1px solid #e0e9f4;
+}
+.detail-info__specs {
+  width: 590px;
+}
+.detail-info__container {
+  padding: 33px 33px 45px;
+}
+.detail-info__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.detail-info__name {
+  margin-bottom: 32px;
+  color: #131825;
+  font-weight: 700;
+  line-height: 48px;
+}
+.detail-info__form {
+  margin-bottom: 32px;
+}
+.detail-info__rental {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #131825;
+}
+.period__input-container {
+  display: inline-flex;
+  width: 255px;
+}
+.period__input {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid #e0e9f4;
+  padding: 18px 16px;
+}
+.period__input-icon {
+  position: absolute;
+  left: 86%;
+  top: 16px;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.detail-info__feat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail-info__feat-left {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #131825;
+  margin-bottom: 12px;
+}
+.detail-info__feat-middle {
+  flex-grow: 1;
+  border-bottom: 2px dotted #e0e9f4;
+  margin: 0 10px;
+}
+.detail-info__feat-right {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #131825;
+  margin-bottom: 12px;
+}
+.detail-info__feats {
+  margin-bottom: 40px;
+}
+
+.detail-info__price {
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+.detail-info__price--black {
+  color: #131825;
+}
+.detail-info__price--gray {
+  color: #a0a0a0;
+}
+.detail-info__order-btn {
+  background-color: #3563e9;
+  color: white;
+  padding: 18px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 16px;
+  outline: none;
+  border: none;
+}
+.detail-info__order-btn img {
+  margin-left: 8px;
+}
+
+/* Small device */
+@media (max-width: 480px) {
+  .sm-layout {
+    display: block;
+  }
+  .lg-layout {
+    display: none;
+  }
+
+  .sm-layout {
+    display: block;
+  }
+  .detail {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .detail-slider {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    width: 100% !important;
+    justify-content: space-between;
+  }
+  .detail-info__form {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  .detail-slider__item-container {
+    flex-shrink: 0;
+    width: 56px !important;
+    height: 56px;
+  }
+  .detail-slider__item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .detail-slider__item-img--active {
+    border: 2px solid #3563e9;
+  }
+  .detail-info {
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #f8f8f8;
+    display: block;
+  }
+  .detail-info__specs {
+    max-width: 344px;
+  }
+  .detail-info__img-container {
+    width: 344px;
+    height: 344px;
+    margin-bottom: 16px;
+    border: none;
+  }
+  .detail-info__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+  .detail-info__name {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .detail-info__rental {
+    font-size: 14px;
+  }
+  .period__inputs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .period__input {
+    padding: 12px;
+    border: 1px solid #e0e9f4;
+    border-radius: 8px;
+  }
+  .detail-info__feats {
+    margin-bottom: 16px;
+  }
+  .detail-info__feat {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .detail-info__feat-left {
+    font-size: 14px;
+  }
+  .detail-info__order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .detail-info__price {
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 0;
+  }
+  .detail-info__order-btn {
+    padding: 18px;
+    background-color: #3563e9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 136px;
+  }
+}
